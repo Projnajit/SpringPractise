@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+<!--    <bean class="org.example.Employee" name="employee" p:empId="702" p:empAddress="Kafrul" p:empName="Projnajit" />-->
+
+    <context:annotation-config/>
+
+    <util:list list-class="java.util.LinkedList" id="friends">
+        <value>Rasel</value>
+        <value>Fahad</value>
+        <value>Sajeed</value>
+        <value>Talha</value>
+    </util:list>
+
+
+
+
+
+<!--    <bean class="org.example.Employee" name="constructorInjection">-->
+<!--        <constructor-arg value="707" />-->
+<!--        <constructor-arg value="Irfan Sabbir" />-->
+<!--        <constructor-arg value="Kafrul, Kachukhet" />-->
+<!--    </bean>-->
+
+<!--    <bean class="org.lifeCycle.helperClass" name="setterInjection">-->
+<!--        <property name="id" value="702" />-->
+<!--        <property name="name" value="Projnajit Barua"/>-->
+<!--    </bean>-->
+
+
+    <bean class="org.autowiring.Address" name="address">
+        <property name="city" value="Dhaka"/>
+        <property name="street" value="Kalachadpur"/>
+    </bean>
+
+    <bean class="org.autowiring.Employee" name="employee">
+        <property name="id" value="702"/>
+        <property name="friends" ref="friends"/>
+    </bean>
+
+    <context:component-scan base-package="org.annotation"/>
+
+</beans>
+
+

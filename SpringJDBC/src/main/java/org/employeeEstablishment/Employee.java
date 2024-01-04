@@ -1,4 +1,4 @@
-package org.example;
+package org.employeeEstablishment;
 
 public class Employee {
     private String name;
@@ -86,5 +86,19 @@ public class Employee {
 
     public void setImageName(String imageName) {
         this.imageName = imageName;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", designation='" + designation + '\'' +
+                ", gender='" + gender + '\'' +
+                ", projectType='" + projectType + '\'' +
+                ", imageName='" + imageName + '\'' +
+                '}';
     }
 }

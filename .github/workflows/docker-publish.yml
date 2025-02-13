@@ -24,8 +24,8 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t projnajit/image1:latest .
+        docker build -t projnajit/image1 .
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker push projnajit/image1:latest
+        docker push projnajit/image1
